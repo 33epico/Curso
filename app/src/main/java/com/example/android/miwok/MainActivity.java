@@ -21,6 +21,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import static com.example.android.miwok.R.id.activity_colores;
+import static com.example.android.miwok.R.id.colors;
+import static com.example.android.miwok.R.id.family;
+import static com.example.android.miwok.R.id.numbers;
+import static com.example.android.miwok.R.id.phrases;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -29,24 +35,62 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
+
+        final TextView colores = (TextView) findViewById(colors);
+
+        colores.setOnClickListener(new View.OnClickListener() {
+                                       @Override
+                                       public void onClick(View view) {
+                                           Intent coloresIntent = new Intent(MainActivity.this, Colores.class);
+                                           startActivity(coloresIntent);
+                                       }
+                                   }
+
+
+        );
+
+        final TextView familia = (TextView) findViewById(family);
+
+        familia.setOnClickListener(new View.OnClickListener() {
+                                       @Override
+                                       public void onClick(View view) {
+                                           Intent familiaIntent = new Intent(MainActivity.this, Family.class);
+                                           startActivity(familiaIntent);
+                                       }
+                                   }
+        );
+
+        final TextView frases = (TextView) findViewById(phrases);
+
+        frases.setOnClickListener(new View.OnClickListener() {
+                                       @Override
+                                       public void onClick(View view) {
+                                           Intent frasesIntent = new Intent(MainActivity.this, Frases.class);
+                                           startActivity(frasesIntent);
+                                       }
+                                   }
+
+
+        );
+
+        final TextView numeros = (TextView) findViewById(numbers);
+
+        numeros.setOnClickListener(new View.OnClickListener() {
+                                      @Override
+                                      public void onClick(View view) {
+                                          Intent numerosIntent = new Intent(MainActivity.this, Numbers.class);
+                                          startActivity(numerosIntent);
+                                      }
+                                  }
+
+
+        );
+
     }
 
-    TextView colors = (TextView) findViewById(R.id.colors);
 
-    // Set a click listener on that View
-    colors.setOnClickListener  (new OnClickListener() {
-        // The code in this method will be executed when the colors category is clicked on.
-        @Override
-        public void onClick (View view){
-            // Create a new intent to open the {@link ColorsActivity}
-            Intent colorsIntent = new Intent(MainActivity.this, Colores.class);
 
-            // Start the new activity
-            startActivity(colorsIntent);
-        }
-    }
 
-    );
 
 
 }
